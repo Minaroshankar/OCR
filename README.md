@@ -51,17 +51,21 @@ Example:
 Before:
 
 C:\Users\Mina\Desktop\New folder (3)
+
 │
-├── Cats\Cute Cats\fluffy cat.jpg
-└── Dogs\happy dog.jpg
+
+            ├── Cats\Cute Cats\fluffy cat.jpg
+                        └── Dogs\happy dog.jpg
 
 
 After:
 
 C:\Users\Mina\Desktop\New folder (3)
+
 │
-├── Cats\Cute Cats\fluffycat_Cute Cats_Cats.jpg
-└── Dogs\happydog_Dogs.jpg
+
+              ├── Cats\Cute Cats\fluffycat_Cute Cats_Cats.jpg
+                                     └── Dogs\happydog_Dogs.jpg
 
 
 How to Run:
@@ -96,8 +100,8 @@ filename label
 Excel Format Example:
 
 Label	Folder 1	Folder 2	Folder 3	Folder 4
-cat	A	B	C	D
-dog	E	F		
+cat      	A	        B      	C	          D
+dog	      E	        F		
 
 Example Output (output.txt):
 

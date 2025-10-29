@@ -22,10 +22,6 @@ Examples
 
 Notes
 
-License
-
-Author
-
 Overview
 
 The repository includes:

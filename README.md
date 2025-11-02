@@ -56,3 +56,98 @@ Install dependencies:
 ```bash
 pip install pandas
 
+## Example Usage
+
+# ==========================
+# Example 1: Rename Images
+# ==========================
+
+rename_images_in_directory(
+    base_path=r"path"
+)
+
+"""
+this function is for renaming image files
+
+Steps:
+1. Walk through all subdirectories of the given base_path.
+2. Remove any spaces from .jpg file names.
+3. Rename each image by appending its parent folder names in reverse order, joined by '_'.
+
+Parameters:
+- base_path: path to the base directory that contains image subfolders
+
+Example:
+If you have:
+    C:\Data\A\B\sample 1.jpg
+it becomes:
+    C:\Data\A\B\sample1_B_A.jpg
+"""
+
+
+
+# ==========================
+# Example 2: Process Excel and Create Label File
+# ==========================
+
+process_excel_and_save_labels(
+    file_path=r"file_path",
+    base_path=r"Excel_path",
+    output_file=r"text_file"
+)
+
+"""
+this function is for reading Excel data and generating a label text file
+
+Steps:
+1. Reads an Excel file containing folder names and labels.
+2. Traverses through folders (columns 1–4 of each row) under base_path.
+3. Finds image files (.jpg, .jpeg, .png) in each corresponding directory.
+4. Writes their filenames and labels into a text file (output.txt).
+
+Parameters:
+- file_path: path to the Excel file that contains folder names and labels
+- base_path: path to the main folder that contains all subdirectories
+- output_file: path where the generated label text file will be saved
+
+Example:
+If the Excel has:
+    Row:  Label | Folder1 | Folder2 | Folder3 | Folder4
+The program will search:
+    base_path\Folder1\Folder2\Folder3\Folder4\
+and write each image name with its label, like:
+    image1.jpg Label1
+    image2.jpg Label1
+"""
+
+
+
+# ==========================
+# Example 3: Combined Main Run
+# ==========================
+
+def main():
+    """
+    This function runs both processes sequentially:
+    1. Renames all images inside a directory.
+    2. Processes the Excel file to generate label mappings.
+    """
+
+    # Step 1: Rename images
+    rename_images_in_directory(
+        base_path=r"base_path"
+    )
+
+    # Step 2: Process Excel and save labels
+    process_excel_and_save_labels(
+        file_path=r"path",
+        base_path=r"path",
+        output_file=r"path"
+    )
+
+    print("All tasks completed successfully.")
+
+
+# Run main
+if __name__ == "__main__":
+    main()

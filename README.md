@@ -47,18 +47,39 @@ Each image file found in the specified folders is written to the output text fil
 
 ## Example Usage
 
-    """
     This functions run two processes:
     1. Renames all images inside a directory.
     2. Processes the Excel file to generate label mappings.
     """
 
     # function 1: Rename images
+  this function is for renaming image files
+
+Steps:
+1. Walk through all subdirectories of the given base_path.
+2. Remove any spaces from .jpg file names.
+3. Rename each image by appending its parent folder names in reverse order, joined by '_'.
+
+Parameters:
+- base_path: path to the base directory that contains image subfolders
     rename_images_in_directory(
         base_path=r"text"
     )
 
     # function 2: Process Excel and save labels
+  this function is for reading Excel data and generating a label text file
+
+Steps:
+1. Reads an Excel file containing folder names and labels.
+2. Traverses through folders (columns 1–4 of each row) under base_path.
+3. Finds image files (.jpg, .jpeg, .png) in each corresponding directory.
+4. Writes their filenames and labels into a text file (output.txt).
+
+Parameters:
+- file_path: path to the Excel file that contains folder names and labels
+- base_path: path to the main folder that contains all subdirectories
+- output_file: path where the generated label text file will be saved
+
     process_excel_and_save_labels(
         file_path=r"text",
         base_path=r"test",

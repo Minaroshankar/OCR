@@ -45,17 +45,6 @@ Each image file found in the specified folders is written to the output text fil
 
 ---
 
-## Requirements
-
-- Python 3.7 or higher  
-- Required library:
-  - `pandas`  
-- Uses only built-in and lightweight dependencies.
-
-Install dependencies:
-```bash
-pip install pandas
-
 ## Example Usage
 
 # ==========================
@@ -63,7 +52,7 @@ pip install pandas
 # ==========================
 
 rename_images_in_directory(
-    base_path=r"path"
+    base_path=r"C:\Users\Mina\Desktop\New folder (3)"
 )
 
 """
@@ -91,9 +80,9 @@ it becomes:
 # ==========================
 
 process_excel_and_save_labels(
-    file_path=r"file_path",
-    base_path=r"Excel_path",
-    output_file=r"text_file"
+    file_path=r"C:\Users\Mina\Desktop\excel khayamm.xlsx",
+    base_path=r"C:\Users\Mina\Desktop\work\ocr\Khayamm\Khayamm",
+    output_file=r"C:\Users\Mina\Desktop\output.txt"
 )
 
 """
@@ -135,14 +124,14 @@ def main():
 
     # Step 1: Rename images
     rename_images_in_directory(
-        base_path=r"base_path"
+        base_path=r"C:\Users\Mina\Desktop\New folder (3)"
     )
 
     # Step 2: Process Excel and save labels
     process_excel_and_save_labels(
-        file_path=r"path",
-        base_path=r"path",
-        output_file=r"path"
+        file_path=r"C:\Users\Mina\Desktop\excel khayamm.xlsx",
+        base_path=r"C:\Users\Mina\Desktop\work\ocr\Khayamm\Khayamm",
+        output_file=r"C:\Users\Mina\Desktop\output.txt"
     )
 
     print("All tasks completed successfully.")
@@ -151,3 +140,17 @@ def main():
 # Run main
 if __name__ == "__main__":
     main()
+
+## Requirements
+
+- Python 3.7 or higher  
+- Required library:
+  - `pandas`  
+- Uses only built-in and lightweight dependencies.
+
+Install dependencies:
+```bash
+pip install pandas
+
+
+

@@ -47,99 +47,26 @@ Each image file found in the specified folders is written to the output text fil
 
 ## Example Usage
 
-# ==========================
-# Example 1: Rename Images
-# ==========================
-
-rename_images_in_directory(
-    base_path=r"C:\Users\Mina\Desktop\New folder (3)"
-)
-
-"""
-this function is for renaming image files
-
-Steps:
-1. Walk through all subdirectories of the given base_path.
-2. Remove any spaces from .jpg file names.
-3. Rename each image by appending its parent folder names in reverse order, joined by '_'.
-
-Parameters:
-- base_path: path to the base directory that contains image subfolders
-
-Example:
-If you have:
-    C:\Data\A\B\sample 1.jpg
-it becomes:
-    C:\Data\A\B\sample1_B_A.jpg
-"""
-
-
-
-# ==========================
-# Example 2: Process Excel and Create Label File
-# ==========================
-
-process_excel_and_save_labels(
-    file_path=r"C:\Users\Mina\Desktop\excel khayamm.xlsx",
-    base_path=r"C:\Users\Mina\Desktop\work\ocr\Khayamm\Khayamm",
-    output_file=r"C:\Users\Mina\Desktop\output.txt"
-)
-
-"""
-this function is for reading Excel data and generating a label text file
-
-Steps:
-1. Reads an Excel file containing folder names and labels.
-2. Traverses through folders (columns 1–4 of each row) under base_path.
-3. Finds image files (.jpg, .jpeg, .png) in each corresponding directory.
-4. Writes their filenames and labels into a text file (output.txt).
-
-Parameters:
-- file_path: path to the Excel file that contains folder names and labels
-- base_path: path to the main folder that contains all subdirectories
-- output_file: path where the generated label text file will be saved
-
-Example:
-If the Excel has:
-    Row:  Label | Folder1 | Folder2 | Folder3 | Folder4
-The program will search:
-    base_path\Folder1\Folder2\Folder3\Folder4\
-and write each image name with its label, like:
-    image1.jpg Label1
-    image2.jpg Label1
-"""
-
-
-
-# ==========================
-# Example 3: Combined Main Run
-# ==========================
-
-def main():
     """
-    This function runs both processes sequentially:
+    This functions run two processes:
     1. Renames all images inside a directory.
     2. Processes the Excel file to generate label mappings.
     """
 
-    # Step 1: Rename images
+    # function 1: Rename images
     rename_images_in_directory(
-        base_path=r"C:\Users\Mina\Desktop\New folder (3)"
+        base_path=r"text"
     )
 
-    # Step 2: Process Excel and save labels
+    # function 2: Process Excel and save labels
     process_excel_and_save_labels(
-        file_path=r"C:\Users\Mina\Desktop\excel khayamm.xlsx",
-        base_path=r"C:\Users\Mina\Desktop\work\ocr\Khayamm\Khayamm",
-        output_file=r"C:\Users\Mina\Desktop\output.txt"
+        file_path=r"text",
+        base_path=r"test",
+        output_file=r"text"
     )
 
     print("All tasks completed successfully.")
 
-
-# Run main
-if __name__ == "__main__":
-    main()
 
 ## Requirements
 

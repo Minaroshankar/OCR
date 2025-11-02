@@ -52,7 +52,7 @@ Each image file found in the specified folders is written to the output text fil
     2. Processes the Excel file to generate label mappings.
     """
 
-    # function 1: Rename images
+# function 1: Rename images
   this function is for renaming image files
 
 Steps:
